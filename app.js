@@ -13,7 +13,8 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-questions = [
+const createEmployee = () => {
+  inquirer.prompt([
   {
     type: 'input',
     name: 'name',
@@ -33,9 +34,52 @@ questions = [
     type: 'list',
     name: 'role',
     message: 'What role is your employee?',
-    choices: ['Manager', 'Engineer', 'Intern', 'Employee'],
+    choices: ['Manager', 'Engineer', 'Intern'],
   }
-]
+])
+  .then(answers => {
+    if (answers.role === 'Manager') {
+      inquirer.prompt([
+        {
+          type: 'input',
+          name: 'officeNumber',
+          message: 'What is the manager office number?',
+        }
+      ])
+      .then(manager1 => {
+        const personManager = new Manager(answers.name, answers.id, answers.email, manager1.officeNumber)
+        console.log(personManager)
+      })
+      } else if (answers.role === 'Engineer') {
+      inquirer.prompt([
+        {
+        type: 'input',
+        name: 'github',
+        message: 'What is the engineer github page?',
+        }
+      ])
+      .then(engineer1 => {
+        const personEngineer = new Engineer(answers.name, answers.id, answers.email, engineer1.github)
+        console.log(personEngineer)
+        })
+    } else if (answers.role === 'Intern') {
+      inquirer.prompt([
+        {
+          type: 'input',
+          name: 'school',
+          message: 'What is the interns school?',
+        }
+      ])
+      .then(intern1 => {
+          const personIntern = new Intern(answers.name, answers.id, answers.email, intern1.school)
+          console.log(personIntern)
+      })
+    }
+  })
+  .catch(err => console.log(err))
+}
+
+createEmployee ()
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
