@@ -28,7 +28,9 @@ const add = () => {
     if (data.add == true) {
       createEmployee()
     } else {
-    console.log()
+    const team = render(teamMembers)
+    render(teamMembers)
+    console.log(team)
     }
   })
 }
@@ -67,8 +69,8 @@ const createEmployee = () => {
         }
       ])
       .then(manager1 => {
-        const personManager = new Manager(answers.name, answers.id, answers.email, manager1.officeNumber)
-        teamMembers.push(personManager)
+        const manager = new Manager(answers.name, answers.id, answers.email, manager1.officeNumber)
+        teamMembers.push(manager)
         console.log(teamMembers)
         add()
       })
@@ -81,8 +83,8 @@ const createEmployee = () => {
         }
       ])
       .then(engineer1 => {
-        const personEngineer = new Engineer(answers.name, answers.id, answers.email, engineer1.github)
-        teamMembers.push(personEngineer) 
+        const engineer = new Engineer(answers.name, answers.id, answers.email, engineer1.github)
+        teamMembers.push(engineer) 
         console.log(teamMembers)
         add()
         })
@@ -95,8 +97,8 @@ const createEmployee = () => {
         }
       ])
       .then(intern1 => {
-          const personIntern = new Intern(answers.name, answers.id, answers.email, intern1.school)
-          teamMembers.push(personIntern)
+          const intern = new Intern(answers.name, answers.id, answers.email, intern1.school)
+          teamMembers.push(intern)
         console.log(teamMembers)
         add()
         
@@ -108,13 +110,10 @@ const createEmployee = () => {
 
 createEmployee()
 
-const website = render(teamMembers)
+fs.writeFile('team.html', team, err => {
+  if (err) { console.log(err) }
+});
 
-fs.writeFile('website.html', website, err => {
-  if (err) {
-    return console.log(err);
-  }
-})
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
