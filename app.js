@@ -30,7 +30,9 @@ const add = () => {
     } else {
     const team = render(teamMembers)
     render(teamMembers)
-    console.log(team)
+    fs.writeFile('team.html', team, err => {
+        if (err) { console.log(err) }
+      });
     }
   })
 }
@@ -109,11 +111,6 @@ const createEmployee = () => {
 }
 
 createEmployee()
-
-fs.writeFile('team.html', team, err => {
-  if (err) { console.log(err) }
-});
-
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
