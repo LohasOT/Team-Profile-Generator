@@ -173,3 +173,62 @@ You are required to submit the following:
 
 - - -
 © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+
+  # Team Profile Generator
+
+  ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/LohasOT/Team-Profile-Generator?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/LohasOT/Team-Profile-Generator?style=flat&logo=appveyor) ![Badge for GitHub commit activity](https://img.shields.io/github/commit-activity/w/LohasOT/Team-Profile-Generator?color=purple)
+
+
+  ## Table of Content
+
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+
+
+  ## Description
+  A software engineering team generator command line application. The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns.
+
+  ## Installation
+
+  *Steps required to install project and how to get the development environment running:*
+
+  You will need inquirer and jest test.
+
+  ## Usage
+
+  *Instructions and examples for use:*
+
+  Type node app.js in terminal then answer the prompted questions
+
+  ## Contributing
+
+  *If you would like to contribute it, you can follow these guidelines for how to do so.*
+
+  None
+
+  ## Tests
+
+  *Tests for application and how to run them:*
+
+  None
+
+  ## License
+
+  The Unlicense
+
+  ## Questions
+
+  For any questions, please contact me with the information below:
+
+  GitHub: https://github.com/LohasOT
+
+  Email: oliverhoang93@gmail.com
+
+  ## Video Tutorial
+
+  <a href="https://www.youtube.com/watch?v=pVPQ5ESgmHs">Youtube Tutorial</a> 
